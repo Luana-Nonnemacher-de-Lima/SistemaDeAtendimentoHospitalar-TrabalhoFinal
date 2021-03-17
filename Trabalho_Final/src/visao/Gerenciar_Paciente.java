@@ -2,16 +2,13 @@ package visao;
 
 import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
-import java.awt.BorderLayout;
 import javax.swing.JLabel;
-import java.awt.Rectangle;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Dimension;
-import javax.swing.border.BevelBorder;
 import java.awt.Cursor;
 
 public class Gerenciar_Paciente extends JPanel {
@@ -22,7 +19,7 @@ public class Gerenciar_Paciente extends JPanel {
 	private JTextField fieldNomePai;
 	private JLabel labelNomeDaMae;
 	private JTextField fieldNomeMae;
-	private JComboBox comboBoxTipoSangue;
+	private JComboBox<String> comboBoxTipoSangue;
 
 	/**
 	 * Create the panel.
@@ -99,10 +96,10 @@ public class Gerenciar_Paciente extends JPanel {
 		add(fieldDataDeNascimento, "cell 3 2,growx");
 		fieldDataDeNascimento.setColumns(10);
 
-		comboBoxTipoSangue = new JComboBox();
+		comboBoxTipoSangue = new JComboBox<String>();
 		comboBoxTipoSangue.setMinimumSize(new Dimension(5, 5));
 		comboBoxTipoSangue.setPreferredSize(new Dimension(147, 19));
-		comboBoxTipoSangue.setModel(new DefaultComboBoxModel(new String[] { "", "Tipo A+", "Tipo A-", "Tipo B+",
+		comboBoxTipoSangue.setModel(new DefaultComboBoxModel<String>(new String[] { "", "Tipo A+", "Tipo A-", "Tipo B+",
 				"Tipo B-", "Tipo AB+", "Tipo AB-", "Tipo O+", "Tipo O-" }));
 		add(comboBoxTipoSangue, "cell 3 6");
 
