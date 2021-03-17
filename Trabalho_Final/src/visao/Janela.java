@@ -21,22 +21,14 @@ public class Janela extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPaneTelaPrincipal;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Janela frame = new Janela();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private JMenuItem itemMenuGerenciarPaciente;
+	private JMenuItem mntmGerarAtendimento;
+	private JMenuItem mntmGerarConsulta;
+	private JMenuItem mntmEncaminharParaInternao;
+	private JMenuItem mntmFinalizarAtendimento;
+	private JMenuItem mntmListarPacientesAguardando;
+	private JMenuItem mntmListarPacientesInternados;
+	private JMenuItem mntmListarNmeroDe;
 
 	/**
 	 * Create the frame.
@@ -57,7 +49,7 @@ public class Janela extends JFrame {
 		menuPaciente.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		menuBar.add(menuPaciente);
 
-		JMenuItem itemMenuGerenciarPaciente = new JMenuItem("Gerenciar Paciente");
+		itemMenuGerenciarPaciente = new JMenuItem("Gerenciar Paciente");
 		menuPaciente.add(itemMenuGerenciarPaciente);
 
 		JMenu menuAtendimentoEmergencia = new JMenu("Atendimento");
@@ -65,7 +57,7 @@ public class Janela extends JFrame {
 		menuAtendimentoEmergencia.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		menuBar.add(menuAtendimentoEmergencia);
 
-		JMenuItem mntmGerarAtendimento = new JMenuItem("Gerar Atendimento");
+		mntmGerarAtendimento = new JMenuItem("Gerar Atendimento");
 		menuAtendimentoEmergencia.add(mntmGerarAtendimento);
 
 		JMenu menuConsulta = new JMenu("Consulta");
@@ -73,13 +65,13 @@ public class Janela extends JFrame {
 		menuConsulta.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		menuBar.add(menuConsulta);
 
-		JMenuItem mntmGerarConsulta = new JMenuItem("Gerar Consulta");
+		mntmGerarConsulta = new JMenuItem("Gerar Consulta");
 		menuConsulta.add(mntmGerarConsulta);
 
-		JMenuItem mntmEncaminharParaInternao = new JMenuItem("Encaminhar Para Internação");
+		mntmEncaminharParaInternao = new JMenuItem("Encaminhar Para Internação");
 		menuConsulta.add(mntmEncaminharParaInternao);
 
-		JMenuItem mntmFinalizarAtendimento = new JMenuItem("Finalizar Atendimento");
+		mntmFinalizarAtendimento = new JMenuItem("Finalizar Atendimento");
 		menuConsulta.add(mntmFinalizarAtendimento);
 
 		JMenu menuRelatorios = new JMenu("Relatórios");
@@ -87,13 +79,13 @@ public class Janela extends JFrame {
 		menuRelatorios.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		menuBar.add(menuRelatorios);
 
-		JMenuItem mntmListarPacientesAguardando = new JMenuItem("Pacientes Aguardando Por Leito");
+		mntmListarPacientesAguardando = new JMenuItem("Pacientes Aguardando Por Leito");
 		menuRelatorios.add(mntmListarPacientesAguardando);
 
-		JMenuItem mntmListarPacientesInternados = new JMenuItem("Pacientes Internados");
+		mntmListarPacientesInternados = new JMenuItem("Pacientes Internados");
 		menuRelatorios.add(mntmListarPacientesInternados);
 
-		JMenuItem mntmListarNmeroDe = new JMenuItem("Número de Leitos Vagos");
+		mntmListarNmeroDe = new JMenuItem("Número de Leitos Vagos");
 		menuRelatorios.add(mntmListarNmeroDe);
 		contentPaneTelaPrincipal = new JPanel();
 		contentPaneTelaPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -101,6 +93,83 @@ public class Janela extends JFrame {
 		contentPaneTelaPrincipal.setLayout(new CardLayout(0, 0));
 		Tela_Inicial painel1 = new Tela_Inicial();
 		contentPaneTelaPrincipal.add(painel1);
-		
+
 	}
+
+	public JPanel getContentPaneTelaPrincipal() {
+		return contentPaneTelaPrincipal;
+	}
+
+	public void setContentPaneTelaPrincipal(JPanel contentPaneTelaPrincipal) {
+		this.contentPaneTelaPrincipal = contentPaneTelaPrincipal;
+	}
+
+	public JMenuItem getItemMenuGerenciarPaciente() {
+		return itemMenuGerenciarPaciente;
+	}
+
+	public void setItemMenuGerenciarPaciente(JMenuItem itemMenuGerenciarPaciente) {
+		this.itemMenuGerenciarPaciente = itemMenuGerenciarPaciente;
+	}
+
+	public JMenuItem getMntmGerarAtendimento() {
+		return mntmGerarAtendimento;
+	}
+
+	public void setMntmGerarAtendimento(JMenuItem mntmGerarAtendimento) {
+		this.mntmGerarAtendimento = mntmGerarAtendimento;
+	}
+
+	public JMenuItem getMntmGerarConsulta() {
+		return mntmGerarConsulta;
+	}
+
+	public void setMntmGerarConsulta(JMenuItem mntmGerarConsulta) {
+		this.mntmGerarConsulta = mntmGerarConsulta;
+	}
+
+	public JMenuItem getMntmEncaminharParaInternao() {
+		return mntmEncaminharParaInternao;
+	}
+
+	public void setMntmEncaminharParaInternao(JMenuItem mntmEncaminharParaInternao) {
+		this.mntmEncaminharParaInternao = mntmEncaminharParaInternao;
+	}
+
+	public JMenuItem getMntmFinalizarAtendimento() {
+		return mntmFinalizarAtendimento;
+	}
+
+	public void setMntmFinalizarAtendimento(JMenuItem mntmFinalizarAtendimento) {
+		this.mntmFinalizarAtendimento = mntmFinalizarAtendimento;
+	}
+
+	public JMenuItem getMntmListarPacientesAguardando() {
+		return mntmListarPacientesAguardando;
+	}
+
+	public void setMntmListarPacientesAguardando(JMenuItem mntmListarPacientesAguardando) {
+		this.mntmListarPacientesAguardando = mntmListarPacientesAguardando;
+	}
+
+	public JMenuItem getMntmListarPacientesInternados() {
+		return mntmListarPacientesInternados;
+	}
+
+	public void setMntmListarPacientesInternados(JMenuItem mntmListarPacientesInternados) {
+		this.mntmListarPacientesInternados = mntmListarPacientesInternados;
+	}
+
+	public JMenuItem getMntmListarNmeroDe() {
+		return mntmListarNmeroDe;
+	}
+
+	public void setMntmListarNmeroDe(JMenuItem mntmListarNmeroDe) {
+		this.mntmListarNmeroDe = mntmListarNmeroDe;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 }

@@ -35,7 +35,7 @@ public class Finalizar_Atendimento extends JPanel {
 		listPacientesInternados = new JList<String>();
 		tabbedPane.addTab("Pacientes Internados", listPacientesInternados);
 		listPacientesNaEnfermaria = new JList<String>();
-		tabbedPane.addTab("Pacientes Internados", listPacientesNaEnfermaria);
+		tabbedPane.addTab("Pacientes Aguardando", listPacientesNaEnfermaria);
 
 		buttonFinalizarAtendimento = new JButton("Finalizar Atendimento");
 		add(buttonFinalizarAtendimento, "cell 0 2,alignx center");
