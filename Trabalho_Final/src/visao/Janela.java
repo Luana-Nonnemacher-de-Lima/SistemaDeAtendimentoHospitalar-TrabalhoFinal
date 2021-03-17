@@ -1,6 +1,5 @@
 package visao;
 
-import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -12,7 +11,6 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 import java.awt.Cursor;
 import java.awt.CardLayout;
-import java.awt.ComponentOrientation;
 
 public class Janela extends JFrame {
 
@@ -35,7 +33,7 @@ public class Janela extends JFrame {
 	 * 
 	 * @throws PropertyVetoException
 	 */
-	public Janela() throws PropertyVetoException {
+	public Janela() {
 		setTitle("Sistema de Atendimento Hospitalar");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(530, 224, 765, 510);
