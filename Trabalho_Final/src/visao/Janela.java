@@ -2,7 +2,6 @@ package visao;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import java.beans.PropertyVetoException;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -10,6 +9,7 @@ import javax.swing.JMenu;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 import java.awt.Cursor;
+import java.awt.event.ActionEvent;
 import java.awt.CardLayout;
 
 public class Janela extends JFrame {
@@ -27,6 +27,7 @@ public class Janela extends JFrame {
 	private JMenuItem mntmListarPacientesAguardando;
 	private JMenuItem mntmListarPacientesInternados;
 	private JMenuItem mntmListarNmeroDe;
+	private CardLayout card;
 
 	/**
 	 * Create the frame.
@@ -85,11 +86,41 @@ public class Janela extends JFrame {
 
 		mntmListarNmeroDe = new JMenuItem("Número de Leitos Vagos");
 		menuRelatorios.add(mntmListarNmeroDe);
-		contentPaneTelaPrincipal = new JPanel();
-		contentPaneTelaPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPaneTelaPrincipal);
-		contentPaneTelaPrincipal.setLayout(new CardLayout(0, 0));
+	}
+
+	public void actionPerformed(ActionEvent menuSelect) {
+		// TODO Auto-generated method stub
+		if (menuSelect.getSource().equals("Gerenciar Paciente")) {
+			card.show(getContentPane(), "painel2");
+		}
+		if (menuSelect.getSource().equals("Gerar Atendimento")) {
+			card.show(getContentPane(), "painel3");
+		}
+		if (menuSelect.getSource().equals("Gerar Consulta")) {
+			card.show(getContentPane(), "painel4");
+		}
+		if (menuSelect.getSource().equals("Encaminhar Para Internação")) {
+			card.show(getContentPane(), "painel5");
+		}
+		if (menuSelect.getSource().equals("Finalizar Atendimento")) {
+			card.show(getContentPane(), "painel6");
+		}
+		if (menuSelect.getSource().equals("Pacientes Aguardando Por Leito")) {
+			card.show(getContentPane(), "painel7");
+		}
+		if (menuSelect.getSource().equals("Pacientes Internados")) {
+			card.show(getContentPane(), "painel8");
+		}
+		if (menuSelect.getSource().equals("Número de Leitos Vagos")) {
+			card.show(getContentPane(), "painel9");
+		}
+
+		card = new CardLayout();
+		
+		contentPaneTelaPrincipal.setLayout(card);
+
 		Tela_Inicial painel1 = new Tela_Inicial();
+		
 		contentPaneTelaPrincipal.add(painel1);
 
 	}
@@ -164,10 +195,6 @@ public class Janela extends JFrame {
 
 	public void setMntmListarNmeroDe(JMenuItem mntmListarNmeroDe) {
 		this.mntmListarNmeroDe = mntmListarNmeroDe;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 
 }
