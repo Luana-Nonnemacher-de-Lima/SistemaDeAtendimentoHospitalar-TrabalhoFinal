@@ -11,10 +11,6 @@ public class Controle_ProgramaPrincipal {
 		Janela janela = new Janela();
 		janela.setVisible(true);
 
-		try {
-			new Controle_Janela(janela);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		new Controle_Janela(janela);
 	}
 }

@@ -26,8 +26,8 @@ public class Pacientes_Aguardando_Leitos extends JPanel {
 	public Pacientes_Aguardando_Leitos() {
 		setLayout(new MigLayout("", "[grow][grow]", "[][grow]"));
 
-		setBounds(530, 224, 765, 510);
-
+		setBounds(0, 0, 765, 510);
+		
 		JLabel lblNewLabel = new JLabel("PACIENTES AGUARDANDO POR LEITOS");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
 		add(lblNewLabel, "cell 0 0 2 1");

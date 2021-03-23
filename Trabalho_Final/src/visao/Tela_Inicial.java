@@ -18,7 +18,7 @@ public class Tela_Inicial extends JPanel {
 	public Tela_Inicial() {
 		setLayout(new MigLayout("", "[][grow][]", "[][grow][]"));
 
-		setBounds(530, 224, 765, 510);
+		setBounds(0, 0, 765, 510);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(

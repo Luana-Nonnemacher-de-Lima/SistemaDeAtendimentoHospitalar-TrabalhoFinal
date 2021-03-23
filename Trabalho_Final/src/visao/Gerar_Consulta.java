@@ -1,151 +1,124 @@
 package visao;
 
 import javax.swing.JPanel;
+import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
-import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JRadioButton;
-import java.awt.Dimension;
-import javax.swing.UIManager;
+import java.awt.Font;
 import javax.swing.JButton;
-import java.awt.Cursor;
+import javax.swing.UIManager;
+import java.awt.Dimension;
 import java.awt.Insets;
 
 public class Gerar_Consulta extends JPanel {
-	private JTextField fieldDataNascimento;
-	private JTextField fieldNome;
 	private JTextField fieldCPF;
+	private JTextField fieldNome;
 	private JTextArea textAreaQueixa;
-	private JTextArea textAreaAvaliacaoMedica;
-	private JTextArea textAreaMedicacao;
 	private JRadioButton rdbtnCardiologia;
-	private JRadioButton rdbtnEmergncia;
 	private JRadioButton rdbtnPediatria;
 	private JRadioButton rdbtnPneumologia;
 	private JRadioButton rdbtnNeurologia;
+	private JRadioButton rdbtnEmergencia;
+	private JButton buttonGerarAtendimento;
+	private JButton buttonLimparTela;
+	private JRadioButton radioButtonPrioridade1;
+	private JRadioButton radioButtonPrioridade2;
+	private JRadioButton radioButtonPrioridade3;
+	private JRadioButton radioButtonPrioridade4;
+	private JRadioButton radioButtonPrioridade5;
 
 	/**
 	 * Create the panel.
 	 */
 	public Gerar_Consulta() {
-		setLayout(new MigLayout("", "[grow][][]", "[][][][grow][][grow][][grow][][][]"));
+		setLayout(new MigLayout("", "[220px][grow]", "[][][][75.00,grow][][][][][]"));
 
-		setBounds(530, 224, 765, 510);
+		setBounds(0, 0, 765, 510);
 
-		JLabel labelGerarAtendimento = new JLabel("Gerar Atendimento");
-		labelGerarAtendimento.setFont(new Font("Dialog", Font.BOLD, 20));
-		add(labelGerarAtendimento, "cell 0 0 3 1");
+		JLabel lblNewLabel_6 = new JLabel("GERAR CONSULTA");
+		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 20));
+		add(lblNewLabel_6, "cell 0 0 2 1");
 
-		JLabel labelNome = new JLabel("Nome:");
-		add(labelNome, "flowy,cell 0 1");
+		JLabel lblNewLabel = new JLabel("CPF");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		add(lblNewLabel, "flowx,cell 0 1,alignx left");
 
-		JLabel labelCPF = new JLabel("CPF:");
-		add(labelCPF, "flowy,cell 1 1");
+		JLabel lblNewLabel_1 = new JLabel("Nome");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		add(lblNewLabel_1, "flowx,cell 1 1");
 
-		JLabel labelDataDeNascimento = new JLabel("Data de Nascimento:");
-		add(labelDataDeNascimento, "flowy,cell 2 1");
-
-		fieldDataNascimento = new JTextField();
-		add(fieldDataNascimento, "cell 2 1,growx");
-		fieldDataNascimento.setColumns(10);
-
-		JLabel labelQueixa = new JLabel("QUEIXA:");
-		add(labelQueixa, "cell 0 2");
-
-		textAreaQueixa = new JTextArea();
-		textAreaQueixa.setWrapStyleWord(true);
-		textAreaQueixa.setLineWrap(true);
-		textAreaQueixa.setPreferredSize(new Dimension(1, 80));
-		textAreaQueixa.setMaximumSize(new Dimension(2147483647, 80));
-		textAreaQueixa.setBorder(UIManager.getBorder("InternalFrame.border"));
-		add(textAreaQueixa, "cell 0 3 3 1,growx");
-
-		JLabel labelAvaliacaoMedica = new JLabel("AVALIAÇÃO MÉDICA:");
-		add(labelAvaliacaoMedica, "cell 0 4");
-
-		textAreaAvaliacaoMedica = new JTextArea();
-		textAreaAvaliacaoMedica.setWrapStyleWord(true);
-		textAreaAvaliacaoMedica.setPreferredSize(new Dimension(1, 80));
-		textAreaAvaliacaoMedica.setLineWrap(true);
-		textAreaAvaliacaoMedica.setMaximumSize(new Dimension(2147483647, 80));
-		textAreaAvaliacaoMedica.setBorder(UIManager.getBorder("InternalFrame.border"));
-		add(textAreaAvaliacaoMedica, "cell 0 5 3 1,growx");
-
-		JLabel lblMedicao = new JLabel("MEDICAÇÃO:");
-		add(lblMedicao, "cell 0 6");
-
-		textAreaMedicacao = new JTextArea();
-		textAreaMedicacao.setWrapStyleWord(true);
-		textAreaMedicacao.setPreferredSize(new Dimension(1, 80));
-		textAreaMedicacao.setMaximumSize(new Dimension(2147483647, 80));
-		textAreaMedicacao.setBorder(UIManager.getBorder("InternalFrame.border"));
-		textAreaMedicacao.setLineWrap(true);
-		add(textAreaMedicacao, "cell 0 7 3 1,growx");
-
-		JLabel labelAlaInternacao = new JLabel("ALA DE INTERNAÇÃO:");
-		add(labelAlaInternacao, "cell 0 8");
-
-		rdbtnCardiologia = new JRadioButton("Cardiologia");
-		rdbtnCardiologia.setIconTextGap(0);
-		add(rdbtnCardiologia, "flowx,cell 0 9 2 1");
-
-		JButton buttonFinalizarConsulta = new JButton("Finalizar Consulta");
-		buttonFinalizarConsulta.setPreferredSize(new Dimension(197, 25));
-		buttonFinalizarConsulta.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		add(buttonFinalizarConsulta, "flowx,cell 0 10 3 1,alignx center");
-
-		fieldNome = new JTextField();
-		fieldNome.setText("");
-		add(fieldNome, "cell 0 1,growx");
-		fieldNome.setColumns(10);
+		JLabel lblNewLabel_2 = new JLabel("Queixa:");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		add(lblNewLabel_2, "cell 0 2");
 
 		fieldCPF = new JTextField();
-		fieldCPF.setText("");
-		add(fieldCPF, "cell 1 1,growx");
+		fieldCPF.setMaximumSize(new Dimension(250, 2147483647));
+		add(fieldCPF, "cell 0 1,grow");
 		fieldCPF.setColumns(10);
 
+		textAreaQueixa = new JTextArea();
+		textAreaQueixa.setPreferredSize(new Dimension(950, 15));
+		textAreaQueixa.setLineWrap(true);
+		textAreaQueixa.setBorder(UIManager.getBorder("InternalFrame.border"));
+		add(textAreaQueixa, "cell 0 3 2 1,alignx center,growy");
+
+		JLabel labelPrioridade = new JLabel("Prioridade:");
+		labelPrioridade.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		add(labelPrioridade, "cell 0 4");
+
+		radioButtonPrioridade1 = new JRadioButton("1");
+		add(radioButtonPrioridade1, "flowx,cell 0 5 2 1");
+
+		JLabel labelAlaIntern = new JLabel("Ala de interna\u00E7\u00E3o");
+		labelAlaIntern.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		add(labelAlaIntern, "cell 0 6");
+
+		rdbtnCardiologia = new JRadioButton("Cardiologia");
+		rdbtnCardiologia.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		add(rdbtnCardiologia, "flowx,cell 0 7 2 1");
+
 		rdbtnPediatria = new JRadioButton("Pediatria");
-		rdbtnPediatria.setIconTextGap(0);
-		add(rdbtnPediatria, "cell 0 9 2 1");
+		rdbtnPediatria.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		add(rdbtnPediatria, "cell 0 7 2 1");
 
 		rdbtnPneumologia = new JRadioButton("Pneumologia");
-		rdbtnPneumologia.setIconTextGap(0);
-		add(rdbtnPneumologia, "cell 0 9 2 1");
+		rdbtnPneumologia.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		add(rdbtnPneumologia, "cell 0 7 2 1");
 
 		rdbtnNeurologia = new JRadioButton("Neurologia");
-		rdbtnNeurologia.setIconTextGap(0);
-		add(rdbtnNeurologia, "cell 0 9 2 1");
+		rdbtnNeurologia.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		add(rdbtnNeurologia, "cell 0 7 2 1");
 
-		JButton buttonEncaminharIntercao = new JButton("Encaminhar Internação");
-		buttonEncaminharIntercao.setMargin(new Insets(1, 14, 1, 14));
-		add(buttonEncaminharIntercao, "cell 0 10 3 1,alignx center");
-		
-				rdbtnEmergncia = new JRadioButton("Emergência");
-				rdbtnEmergncia.setIconTextGap(0);
-				add(rdbtnEmergncia, "flowx,cell 0 9 3 1");
-								
-										JButton buttonLimparTela = new JButton("Limpar Tela");
-										buttonLimparTela.setPreferredSize(new Dimension(197, 25));
-										add(buttonLimparTela, "cell 0 10 2 1,alignx center");
+		rdbtnEmergencia = new JRadioButton("Emerg\u00EAncia");
+		rdbtnEmergencia.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		add(rdbtnEmergencia, "cell 0 7 2 1");
 
-	}
+		fieldNome = new JTextField();
+		fieldNome.setPreferredSize(new Dimension(200, 19));
+		add(fieldNome, "cell 1 1,grow");
+		fieldNome.setColumns(10);
 
-	public JTextField getFieldDataNascimento() {
-		return fieldDataNascimento;
-	}
+		buttonGerarAtendimento = new JButton("Gerar Atendimento");
+		add(buttonGerarAtendimento, "flowx,cell 0 8 2 1,alignx center");
 
-	public void setFieldDataNascimento(JTextField fieldDataNascimento) {
-		this.fieldDataNascimento = fieldDataNascimento;
-	}
+		buttonLimparTela = new JButton("Limpar Tela");
+		add(buttonLimparTela, "cell 0 8 2 1,alignx center");
 
-	public JTextField getFieldNome() {
-		return fieldNome;
-	}
+		radioButtonPrioridade2 = new JRadioButton("2");
+		add(radioButtonPrioridade2, "cell 0 5 2 1");
 
-	public void setFieldNome(JTextField fieldNome) {
-		this.fieldNome = fieldNome;
+		radioButtonPrioridade3 = new JRadioButton("3");
+		add(radioButtonPrioridade3, "cell 0 5 2 1");
+
+		radioButtonPrioridade4 = new JRadioButton("4");
+		add(radioButtonPrioridade4, "cell 0 5 2 1");
+
+		radioButtonPrioridade5 = new JRadioButton("5");
+		add(radioButtonPrioridade5, "cell 0 5 2 1");
+
 	}
 
 	public JTextField getFieldCPF() {
@@ -156,28 +129,20 @@ public class Gerar_Consulta extends JPanel {
 		this.fieldCPF = fieldCPF;
 	}
 
-	public JTextArea getTextAreaQueixa() {
+	public JTextField getFieldNome() {
+		return fieldNome;
+	}
+
+	public void setFieldNome(JTextField fieldNome) {
+		this.fieldNome = fieldNome;
+	}
+
+	public JTextArea getTxtQueixa() {
 		return textAreaQueixa;
 	}
 
-	public void setTextAreaQueixa(JTextArea textAreaQueixa) {
-		this.textAreaQueixa = textAreaQueixa;
-	}
-
-	public JTextArea getTextAreaAvaliacaoMedica() {
-		return textAreaAvaliacaoMedica;
-	}
-
-	public void setTextAreaAvaliacaoMedica(JTextArea textAreaAvaliacaoMedica) {
-		this.textAreaAvaliacaoMedica = textAreaAvaliacaoMedica;
-	}
-
-	public JTextArea getTextAreaMedicacao() {
-		return textAreaMedicacao;
-	}
-
-	public void setTextAreaMedicacao(JTextArea textAreaMedicacao) {
-		this.textAreaMedicacao = textAreaMedicacao;
+	public void setTxtQueixa(JTextArea txtQueixa) {
+		this.textAreaQueixa = txtQueixa;
 	}
 
 	public JRadioButton getRdbtnCardiologia() {
@@ -186,14 +151,6 @@ public class Gerar_Consulta extends JPanel {
 
 	public void setRdbtnCardiologia(JRadioButton rdbtnCardiologia) {
 		this.rdbtnCardiologia = rdbtnCardiologia;
-	}
-
-	public JRadioButton getRdbtnEmergncia() {
-		return rdbtnEmergncia;
-	}
-
-	public void setRdbtnEmergncia(JRadioButton rdbtnEmergncia) {
-		this.rdbtnEmergncia = rdbtnEmergncia;
 	}
 
 	public JRadioButton getRdbtnPediatria() {
@@ -212,26 +169,88 @@ public class Gerar_Consulta extends JPanel {
 		this.rdbtnPneumologia = rdbtnPneumologia;
 	}
 
-	public JRadioButton getRdbtnNeurologia() {
+	public JRadioButton getRdbtnNeuro() {
 		return rdbtnNeurologia;
 	}
 
-	public void setRdbtnNeurologia(JRadioButton rdbtnNeurologia) {
-		this.rdbtnNeurologia = rdbtnNeurologia;
+	public void setRdbtnNeuro(JRadioButton rdbtnNeuro) {
+		this.rdbtnNeurologia = rdbtnNeuro;
+	}
+
+	public JRadioButton getRdbtnEmergencia() {
+		return rdbtnEmergencia;
+	}
+
+	public void setRdbtnEmergencia(JRadioButton rdbtnEmergencia) {
+		this.rdbtnEmergencia = rdbtnEmergencia;
+	}
+
+	public JButton getButtonGerarAtendimento() {
+		return buttonGerarAtendimento;
+	}
+
+	public void setButtonGerarAtendimento(JButton buttonGerarAtendimento) {
+		this.buttonGerarAtendimento = buttonGerarAtendimento;
+	}
+
+	public JButton getButtonLimparTela() {
+		return buttonLimparTela;
+	}
+
+	public void setButtonLimparTela(JButton buttonLimparTela) {
+		this.buttonLimparTela = buttonLimparTela;
+	}
+
+	public JRadioButton getRadioButtonPrioridade1() {
+		return radioButtonPrioridade1;
+	}
+
+	public void setRadioButtonPrioridade1(JRadioButton radioButtonPrioridade1) {
+		this.radioButtonPrioridade1 = radioButtonPrioridade1;
+	}
+
+	public JRadioButton getRadioButtonPrioridade2() {
+		return radioButtonPrioridade2;
+	}
+
+	public void setRadioButtonPrioridade2(JRadioButton radioButtonPrioridade2) {
+		this.radioButtonPrioridade2 = radioButtonPrioridade2;
+	}
+
+	public JRadioButton getRadioButtonPrioridade3() {
+		return radioButtonPrioridade3;
+	}
+
+	public void setRadioButtonPrioridade3(JRadioButton radioButtonPrioridade3) {
+		this.radioButtonPrioridade3 = radioButtonPrioridade3;
+	}
+
+	public JRadioButton getRadioButtonPrioridade4() {
+		return radioButtonPrioridade4;
+	}
+
+	public void setRadioButtonPrioridade4(JRadioButton radioButtonPrioridade4) {
+		this.radioButtonPrioridade4 = radioButtonPrioridade4;
+	}
+
+	public JRadioButton getRadioButtonPrioridade5() {
+		return radioButtonPrioridade5;
+	}
+
+	public void setRadioButtonPrioridade5(JRadioButton radioButtonPrioridade5) {
+		this.radioButtonPrioridade5 = radioButtonPrioridade5;
 	}
 
 	public void LimparTela() {
 		fieldNome.setText("");
 		fieldCPF.setText("");
-		fieldDataNascimento.setText("");
 		textAreaQueixa.setText("");
-		textAreaAvaliacaoMedica.setText("");
-		textAreaMedicacao.setText("");
 		rdbtnCardiologia.setSelected(false);
-		rdbtnEmergncia.setSelected(false);
+		rdbtnEmergencia.setSelected(false);
 		rdbtnNeurologia.setSelected(false);
 		rdbtnPediatria.setSelected(false);
 		rdbtnPneumologia.setSelected(false);
 
 	}
+
 }

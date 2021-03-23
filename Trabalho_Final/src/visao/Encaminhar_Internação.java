@@ -34,7 +34,7 @@ public class Encaminhar_Internação extends JPanel {
 	public Encaminhar_Internação() {
 		setLayout(new MigLayout("", "[grow]", "[][][][grow][][grow][]"));
 
-		setBounds(530, 224, 765, 510);
+		setBounds(0, 0, 765, 510);
 
 		JLabel lblEncaminharParaInternao = new JLabel("ENCAMINHAR PARA INTERNAÇÃO");
 		lblEncaminharParaInternao.setFont(new Font("Tahoma", Font.BOLD, 20));

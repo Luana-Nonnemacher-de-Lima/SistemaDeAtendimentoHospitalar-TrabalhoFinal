@@ -27,7 +27,7 @@ public class Gerenciar_Paciente extends JPanel {
 	public Gerenciar_Paciente() {
 		setLayout(new MigLayout("", "[][grow][grow][][]", "[100px][][30px][][30px][][30px][grow][100px]"));
 
-		setBounds(530, 224, 765, 510);
+		setBounds(0, 0, 765, 510);
 
 		JLabel labelTítulo = new JLabel("Gerenciar Paciente");
 		labelTítulo.setFont(new Font("Dialog", Font.BOLD, 20));

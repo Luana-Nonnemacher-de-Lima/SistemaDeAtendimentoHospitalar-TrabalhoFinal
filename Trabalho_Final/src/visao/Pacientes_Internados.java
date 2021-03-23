@@ -24,7 +24,7 @@ public class Pacientes_Internados extends JPanel {
 	public Pacientes_Internados() {
 		setLayout(new MigLayout("", "[grow]", "[][grow]"));
 
-		setBounds(530, 224, 765, 510);
+		setBounds(0, 0, 765, 510);
 
 		JLabel labelTitulo_1 = new JLabel("PACIENTES INTERNADOS");
 		labelTitulo_1.setFont(new Font("Tahoma", Font.BOLD, 20));

@@ -35,7 +35,7 @@ public class Leitos_Vagos extends JPanel {
 	public Leitos_Vagos() {
 		setLayout(new MigLayout("", "[grow]", "[][][][][grow][][][grow][][][grow][][][grow][][][grow]"));
 
-		setBounds(530, 224, 765, 510);
+		setBounds(0, 0, 765, 510);
 
 		JLabel lblNewLabel = new JLabel("NUMERO DE LEITOS VAGOS POR ALA");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 20));

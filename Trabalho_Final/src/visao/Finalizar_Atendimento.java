@@ -23,7 +23,7 @@ public class Finalizar_Atendimento extends JPanel {
 	public Finalizar_Atendimento() {
 		setLayout(new MigLayout("", "[50.00,grow]", "[][grow][]"));
 
-		setBounds(530, 224, 765, 510);
+		setBounds(0, 0, 765, 510);
 
 		JLabel lblNewLabel = new JLabel("FINALIZAR ATENDIMENTO");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
