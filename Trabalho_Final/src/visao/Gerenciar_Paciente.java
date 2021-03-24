@@ -161,6 +161,14 @@ public class Gerenciar_Paciente extends JPanel {
 		this.fieldNomeMae = fieldNomeMae;
 	}
 
+	public JComboBox<String> getComboBoxTipoSangue() {
+		return comboBoxTipoSangue;
+	}
+
+	public void setComboBoxTipoSangue(JComboBox<String> comboBoxTipoSangue) {
+		this.comboBoxTipoSangue = comboBoxTipoSangue;
+	}
+
 	public void LimparTela() {
 		fieldNome.setText("");
 		fieldCPF.setText("");

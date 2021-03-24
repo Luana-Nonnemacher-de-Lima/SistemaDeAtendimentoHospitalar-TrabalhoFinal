@@ -1,7 +1,6 @@
 package visao;
 
 import javax.swing.JPanel;
-import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -11,7 +10,6 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.UIManager;
 import java.awt.Dimension;
-import java.awt.Insets;
 
 public class Gerar_Consulta extends JPanel {
 	private JTextField fieldCPF;
